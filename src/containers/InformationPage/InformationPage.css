@@ -1,0 +1,59 @@
+.main-home-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 100px 50px 100px;
+    gap: 80px;
+  }
+  
+  .main-discussion-form-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .main-header-heading-condatiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0b0b1b;
+    height: auto;
+    padding: 20px 0px;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .main-header-heading-condatiner > h1 {
+    font-family: Tektur;
+    /* font-size: 64px; */
+    font-weight: 700;
+    line-height: 96px;
+    text-align: center;
+    color: #1ad079;
+  }
+  .main-header-heading-condatiner > p {
+    font-family: Lexend;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    color: #f8f8f8;
+    padding: 0px 8px;
+  }
+  @media (max-width: 439px) {
+    .main-home-container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 10px 10px 10px;
+    }
+  }
+  @media (max-width: 768px) and (min-width: 440px) {
+    .main-home-container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 50px 10px 50px;
+    }
+  }
+  
+  @media (min-width: 1600px) {
+    .main-home-container {
+      width: 1410px;
+    }
+  }

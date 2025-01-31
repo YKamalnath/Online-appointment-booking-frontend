@@ -1,0 +1,490 @@
+.nav-container {
+    display: flex;
+    justify-content: center;
+    background-color: #a5a5db;
+    padding: 8px 100px 8px 100px;
+  }
+  .navbar-container {
+    display: flex;
+    flex-direction: row;
+    /* gap:25px; */
+    padding-right: 50px;
+  }
+  
+  .nav-menu-item {
+    color: #101828;
+    /* font-family: Inter; */
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    padding: 0px 0px;
+    max-width: 1330px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .navbar-container img {
+    max-height: 50px;
+    width: auto;
+    object-fit: cover;
+  }
+  
+  .navbar-container ul {
+    display: flex;
+    list-style: none;
+    column-gap: 39px;
+  }
+  
+  .navbar-container li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .navbar-container a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-family: Lexend;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+  }
+  
+  .navbar-container li:hover {
+    color: red !important;
+    cursor: pointer;
+  }
+  
+  .logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 5px;
+  }
+  
+  .logo-container h3 {
+    color:red;
+  }
+  
+  .navbar-container .menu {
+    display: none;
+    z-index: 999;
+  }
+  
+  .get-button-aliment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .get-button-icon {
+    width: 22px !important; /* Adjust size */
+    height: auto;
+  }
+  .nav-link-down-arrow {
+    display: flex;
+    align-items: center;
+    gap: 7px; /* Space between text and arrow */
+    color: #fff; /* Adjust based on your theme */
+    text-decoration: none;
+  }
+  
+  .nav-down-arrow {
+    width: 9px !important; /* Adjust size */
+    height: auto;
+  }
+  
+  /* Parent container for the options */
+  .options-menu {
+    background-color: transparent; /* Light background for contrast */
+    border: 1px solid #1ad079; /* Border for definition */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Spacing between buttons */
+    position: absolute; /* Ensures it's positioned relative to the parent */
+    top: 80px; /* Adjust as needed */
+    /* right: 0; */
+    z-index: 1000; /* Makes sure it stays on top */
+  }
+  
+  /* Styled buttons */
+  .styled-button {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    font-size: 16px; /* Slightly larger text */
+    padding: 10px 20px; /* Spacious padding */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Smooth edges */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth animations */
+  }
+  
+  /* Hover effects */
+  .styled-button:hover {
+    background-color: #45a049; /* Slightly darker green */
+    transform: scale(1.05); /* Slight enlargement */
+  }
+  
+  /* Active/pressed state */
+  .styled-button:active {
+    background-color: #3e8e41; /* Even darker green */
+    transform: scale(0.95); /* Shrink slightly */
+  }
+
+  .menu {
+    display: block;
+    cursor: pointer;
+    color: white; /* Adjust as per your design */
+    font-size: 24px; /* Adjust icon size */
+    position: absolute; /* Or relative/other as needed */
+    right: 16px; /* Adjust to align properly */
+    top: 16px;
+    z-index: 1000;
+  }
+
+  /* Navbar.css */
+
+/* Modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Close button */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.close-modal:hover {
+  transform: scale(1.2);
+}
+
+/* Form styles */
+form {
+  margin-top: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+label {
+  font-size: 0.9rem;
+  color: #f0f0f0;
+}
+
+input {
+  /* width: 100%; */
+  padding: 0.75rem;
+  border: none;
+  border-radius: 10px;
+  margin-top: 0.3rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #2575fc;
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Buttons */
+.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+
+/* Signup Button */
+.submit.signin-button {
+  background: linear-gradient(135deg, #42e695, #3bb2b8);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.submit.signin-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #32d184, #2a99a1);
+}
+
+/* Login Button */
+.green-border.signin-button {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.green-border.signin-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #ff6e45, #fa9956);
+}
+
+/* Buttons Alignment */
+.nav-menu-item button {
+  margin: 0.5rem;
+  display: inline-block;
+}
+
+
+
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #ff9900, #d90868);
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  input {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+  
+  
+  @media (max-width: 768px) {
+    .options-menu.mobile-view {
+      position: relative; /* Adjust position for mobile view */
+      top: auto;
+  
+      box-shadow: none;
+    }
+  
+    .styled-button {
+      font-size: 14px; /* Slightly smaller text */
+      padding: 8px 16px;
+    }
+  }
+  
+  @media only screen and (max-width: 1023px) {
+    .navbar-container .menu {
+      display: flex;
+      padding: 0px 10px;
+    }
+  
+    .navbar-container ul {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 0;
+      height: 500px;
+      z-index: 999;
+      background: #9d9da7;
+      top: 0;
+      padding: 0;
+      margin: 0;
+      /* height: 100vh; */
+      width: 40vw;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .navbar-container li {
+      display: flex;
+      flex-direction: column;
+    }
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      padding: 17px;
+      width: 100%;
+      max-width: var(--max-width-container);
+      justify-content: space-between;
+      /* background-color: #6464df; */
+    }
+  }
+  
+  @media only screen and (max-width: 450px) {
+    .navbar-container .menu {
+      display: flex;
+      z-index: 999;
+    }
+  
+    .navbar-container ul {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 0;
+      z-index: 999;
+      background: #8a8ae2;
+      top: 0;
+      height: 100vh;
+      width: 100vw;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .navbar-container li {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .navbar-container ul {
+      column-gap: 20px;
+    }
+  }
+  @media (max-width: 1100px) {
+    .navbar-container ul {
+      column-gap: 28px;
+    }
+  }
+  
+  @media (max-width: 1023px) {
+    .nav-container {
+      padding: 8px 10px 8px 10px;
+    }
+  }
+  @media (max-width: 1300px) {
+    .navbar-container img {
+      max-height: 40px;
+      width: auto;
+      object-fit: cover;
+    }
+    .navbar-container ul {
+      column-gap: 20px;
+      height: 100%;
+    }
+  }
+  
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .navbar-container li {
+      position: relative;
+    }
+  
+    .options-menu {
+      position: absolute;
+      top: 44px;
+    }
+  }
+  
+  @media (max-width: 1300px) and (min-width: 1023px) {
+    .styled-button {
+      font-size: 10px;
+    }
+  
+    .options-menu {
+      right: 90px;
+    }
+    .signin-button {
+      font-size: 11px !important;
+      padding: 5px 8px !important;
+    }
+  
+    .get-button-aliment {
+      gap: 2px !important;
+    }
+    .get-button-icon {
+      width: 17px !important;
+      height: auto !important;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      max-width: 1440px;
+    }
+  }

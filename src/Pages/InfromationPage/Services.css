@@ -1,0 +1,129 @@
+.main-services-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .services-heading {
+    font-family: Tektur;
+    /* font-size: 64px;
+    font-weight: 700; */
+    /* line-height: 96px; */
+    text-align: left;
+  }
+  .heading-different-color-resume {
+    color: #007bff;
+  }
+
+  .custombtn{
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 26px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  .services-heading-des {
+    font-family: Lexend;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #282834;
+  }
+  .services-icon-image {
+    padding: 20px 10px 10px 20px;
+    width: 60px;
+    height: auto;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #007bff, #007bff);
+  }
+  .services-icon-image:hover {
+    background: linear-gradient(to bottom, #1ad079, #10824c);
+  }
+  .services-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 40px;
+  }
+  .sub-services-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(11, 11, 27, 0.08);
+  }
+  
+  .sub-services-container:hover {
+    border-color: #007bff;
+  }
+  .sub-services-container:hover .services-icon-image {
+    background: linear-gradient(to bottom, #007bff, #819b8f);
+  }
+  /* .services-icon-image:hover {
+    background: linear-gradient(to bottom, #1ad079, #10824c);
+  } */
+  .sub-services-container > div {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 10px;
+  }
+  .services-sub-heading {
+    text-align: left;
+    color: #282834;
+    font-family: Lexend;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+    height: 65px;
+  }
+  .services-des {
+    text-align: left;
+    font-family: Lexend;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28.8px;
+    text-align: left;
+    /* min-height: 100px; */
+    color: #717173;
+  
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  @media (max-width: 768px) {
+    .services-heading {
+      text-align: center;
+    }
+    .services-heading-des {
+      text-align: center;
+    }
+    .services-des {
+      display: -webkit-box;
+      -webkit-line-clamp: none;
+      -webkit-box-orient: vertical;
+      overflow: none;
+      text-overflow: none;
+      text-align: center;
+    }
+    .services-sub-heading {
+      height: auto;
+      text-align: center;
+    }
+    .sub-services-container > div {
+      align-items: center;
+    }
+  }
+  

@@ -1,0 +1,96 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #f0f9ff, #cbebff);
+  }
+  
+  /* Settings Page Container */
+  .settings-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title */
+  .settings-title {
+    text-align: center;
+    color: #003f5c;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  /* Sections Container */
+  .settings-sections {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  /* Individual Card */
+  .setting-card {
+    background: linear-gradient(to bottom right, #67b7d1, #76c893);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .setting-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card Title */
+  .setting-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  /* Card Description */
+  .setting-card p {
+    font-size: 0.9rem;
+    margin: 0 0 15px 0;
+  }
+  
+  /* Button */
+  .setting-card button {
+    background: #003f5c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+  
+  .setting-card button:hover {
+    background: #022c43;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .settings-sections {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .settings-sections {
+      grid-template-columns: 1fr;
+    }
+  
+    .settings-title {
+      font-size: 1.5rem;
+    }
+  }
+  

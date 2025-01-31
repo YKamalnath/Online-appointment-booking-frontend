@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7faff;
+}
+
+.doctors-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #0056b3;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.doctor-card {
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-name {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.specialization {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.experience,
+.contact {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .doctor-card {
+    padding: 15px;
+  }
+
+  .doctor-name {
+    font-size: 1.3rem;
+  }
+
+  .specialization,
+  .experience,
+  .contact {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .doctor-card {
+    padding: 10px;
+  }
+
+  .doctor-name {
+    font-size: 1.2rem;
+  }
+
+  .specialization,
+  .experience,
+  .contact {
+    font-size: 0.85rem;
+  }
+}

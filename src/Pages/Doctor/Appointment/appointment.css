@@ -1,0 +1,110 @@
+/* Appointment Page Styles */
+.appointment-container-doctor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .appointment-container-doctor h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #003f5c;
+  }
+  
+  /* Appointment List */
+  .appointment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .appointment-card-zz {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    flex-direction: row;
+  }
+  
+  .appointment-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Appointment Info */
+  .appointment-info h4 {
+    font-size: 1.2rem;
+    color: #333333;
+    margin-bottom: 5px;
+  }
+  
+  .appointment-info p {
+    margin: 3px 0;
+    font-size: 0.95rem;
+    color: #666666;
+  }
+  
+  /* Cancel Button */
+  .cancel-button {
+    background-color: #f44336;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* No Appointments */
+  .no-appointments {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666666;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .appointment-card-zz {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .cancel-button {
+      align-self: flex-end;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .appointment-container-doctor h2 {
+      font-size: 1.5rem;
+    }
+  
+    .appointment-info h4 {
+      font-size: 1rem;
+    }
+  
+    .appointment-info p {
+      font-size: 0.85rem;
+    }
+  
+    .cancel-button {
+      font-size: 0.9rem;
+    }
+  }
+  

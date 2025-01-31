@@ -1,0 +1,103 @@
+.main-joincommunity-container {
+    padding: 50px 0px 50px 0px;
+  }
+  .main-joincommunity-container > div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    background-color: #172739;
+    border-radius: 20px;
+    padding: 20px 0px;
+    
+    background-size: cover, cover;
+    background-position: left, right;
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain, contain;
+    justify-content: center;
+  }
+  
+  .joincommunity-heading {
+    font-family: Tektur;
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    /* line-height: 96px; */
+    text-align: center;
+  }
+  
+  .heading-different-color {
+    color: #007bff;
+  }
+  .JoinCommunity-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 620px;
+    align-content: center;
+    padding: 0px 20px;
+  }
+  .JoinCommunity-details-container p {
+    color: #cacacb;
+    font-size: 15px;
+    text-align: center;
+  }
+  .community-left-image {
+    opacity: 0.2;
+    height: 400px;
+    width: auto;
+    padding-left: 20px;
+  }
+  .community-right-image {
+    opacity: 0.2;
+    height: 400px;
+    width: auto;
+    padding-right: 20px;
+  }
+  .email-input {
+    width: 100%;
+    max-width: 400px;
+    height: 60px;
+    padding: 0 10px;
+    border: 2px solid #373741;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-radius: 50px;
+    padding-left: 30px;
+  }
+  .input-button-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .input-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding-top: 20px;
+  }
+  .community-button {
+    position: absolute;
+    right: 16px;
+    top: 41px;
+    height: 30px;
+    color: #f2f2f8;
+    font-weight: bold;
+    padding: 0 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    background: red;
+  }
+  .community-button:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+  }
+  
+  
+  @media (max-width: 768px) {
+    .main-joincommunity-container > div {
+      background-image: none;
+    }
+  }
+  

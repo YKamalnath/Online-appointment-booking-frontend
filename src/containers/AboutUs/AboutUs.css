@@ -1,0 +1,112 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7faff;
+}
+
+.about-us-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  color: #0056b3;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+  text-align: left;
+}
+
+.about-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-left: 5px solid #0056b3;
+  background-color: #e6f7ff;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.about-section.values ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-section.values ul li {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.about-section.values ul li::before {
+  content: '✔';
+  color: #0056b3;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Hover Effects */
+.about-section:hover {
+  background-color: #d0ebff;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-section p,
+  .about-section ul li {
+    font-size: 0.95rem;
+  }
+
+  .about-section {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-section p,
+  .about-section ul li {
+    font-size: 0.85rem;
+  }
+}

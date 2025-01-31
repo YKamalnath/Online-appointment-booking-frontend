@@ -1,0 +1,148 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f8fc;
+  }
+  
+  .help-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0056b3;
+    margin-bottom: 20px;
+  }
+  
+  .help-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    background-color: #e8f4ff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .faq-section h2 {
+    font-size: 2rem;
+    color: #0056b3;
+    margin-bottom: 15px;
+  }
+  
+  .faq {
+    margin-bottom: 20px;
+  }
+  
+  .faq h3 {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .faq p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 5px;
+    line-height: 1.6;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    background-color: #ffe6e6;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .contact-section h2 {
+    font-size: 2rem;
+    color: #b30000;
+    margin-bottom: 15px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-form label {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .contact-form button {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #004090;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+
+    .contact-form input, .contact-form textarea {
+      width: 90%;}
+    .help-content {
+      flex-direction: column;
+    }
+  
+    .faq-section, .contact-section {
+      padding: 15px;
+    }
+  
+    .faq h3, .contact-section h2 {
+      font-size: 1.5rem;
+    }
+  
+    .faq p, .contact-form label {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 2rem;
+    }
+  
+    .faq h3, .contact-section h2 {
+      font-size: 1.3rem;
+    }
+  
+    .faq p, .contact-form label {
+      font-size: 0.8rem;
+    }
+  }
+  

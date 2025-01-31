@@ -1,0 +1,109 @@
+.topbar-container {
+    position: relative;
+  }
+  
+  .topbar-logo-text {
+    color: white;
+    margin-top: 6px;
+    font-size: var(--font-24-px);
+  }
+  
+  .topbar-container-section {
+    background-color: var(--text-body);
+    background: rgb(155, 149, 202);
+    z-index: 1;
+    width: 100%;
+    min-height: 325px;
+    position: sticky;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .topbar-container nav {
+    padding-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 35px;
+  }
+  
+  .admin-side-bar-user-profile {
+    display: none;
+  }
+  
+  .topbar-container ul {
+    all: unset;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .topbar-container li {
+    color: #0e0e13;
+    height: 40px;
+    width: 196px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: var(--font-size-h6);
+    border: 1.5px solid var(--primary-color);
+  }
+  
+  .topbar-active {
+    background-color: rgb(95, 8, 235);
+    color: rgb(250, 244, 244) !important;
+  }
+  
+  .topbar-container span {
+    padding-right: 16px;
+    font-size: var(--font-20-px);
+  }
+  
+  .topbar-container a {
+    all: unset;
+  }
+  
+  .topbar-container li:hover {
+    background-color: rgb(7, 37, 97);
+    color: rgb(235, 197, 231) !important;
+  }
+  
+  .topbar-title-container {
+    text-align: center;
+    padding: 20px;
+    font-weight: 700;
+    font-size: var(--font-19-px);
+    padding-top: 36px;
+  }
+  .topbar-title-container .title {
+    text-align: center;
+    font-family: "Abhaya Libre";
+    font-weight: 600;
+    font-size: var(--font-size-h1);
+    padding-top: 36px;
+    color:rgb(52, 52, 100);
+    line-height: 96px;
+  }
+  .topbar-title-container .sub-title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(241, 236, 236);
+  }
+  
+  .topbar-container .menu {
+    display: none;
+    z-index: 2;
+    top: 0px;
+    left: 0;
+  }
+  
+  .topbar-child {
+    margin-left: 42px;
+  }
+  

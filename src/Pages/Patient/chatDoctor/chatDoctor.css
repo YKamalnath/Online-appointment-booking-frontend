@@ -1,0 +1,142 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 860px;
+    width: 100%;
+    margin: auto;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .chat-header {
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .chat-body {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #f7f9fc;
+  }
+  
+  .message {
+    max-width: 80%;
+    margin: 0.5rem 0;
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+  }
+  
+  .message.doctor {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    align-self: flex-start;
+  }
+  
+  .message.patient {
+    background-color: #cfe2ff;
+    color: #084298;
+    align-self: flex-end;
+  }
+  
+  .chat-footer {
+    display: flex;
+    padding: 0.5rem;
+    background-color: white;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .chat-input {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    margin-right: 0.5rem;
+  }
+  
+  .send-button {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .send-button:hover {
+    background-color: #0b5ed7;
+  }
+  
+  /* Responsive Styling for Smaller Screens */
+  @media (max-width: 768px) {
+    .chat-container {
+      height: 100vh;
+      max-width: 100%;
+      margin: 0;
+      border-radius: 0; /* Remove rounded corners */
+    }
+  
+    .chat-header {
+      font-size: 1.2rem;
+      padding: 0.8rem;
+    }
+  
+    .chat-body {
+      padding: 0.5rem;
+    }
+  
+    .message {
+      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: 15px;
+    }
+  
+    .chat-footer {
+      padding: 0.5rem;
+    }
+  
+    .chat-input {
+      font-size: 0.9rem;
+      padding: 0.4rem;
+      margin-right: 0.3rem;
+    }
+  
+    .send-button {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+  
+  /* Additional Styling for Extra Small Screens */
+  @media (max-width: 480px) {
+    .chat-header {
+      font-size: 1rem;
+      padding: 0.6rem;
+    }
+  
+    .message {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.6rem;
+    }
+  
+    .chat-input {
+      font-size: 0.8rem;
+      padding: 0.3rem;
+    }
+  
+    .send-button {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.6rem;
+    }
+  }
+  

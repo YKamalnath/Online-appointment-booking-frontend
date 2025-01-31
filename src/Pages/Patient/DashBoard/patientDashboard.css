@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  }
+  
+  /* Dashboard Container */
+  .dashboard-container-x {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+  
+  /* Header Section */
+  .dashboard-header {
+    text-align: center;
+    background-color: #2196f3;
+    color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard-header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  /* Dashboard Content */
+  .dashboard-content-x {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Profile Section */
+  .profile {
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+    color: #6a1b9a;
+  }
+  
+  /* Appointments Section */
+  .appointments {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    color: #1565c0;
+  }
+  
+  /* Medical History Section */
+  .medical-history {
+    background: linear-gradient(135deg, #ffebee, #ffcdd2);
+    color: #c62828;
+  }
+  
+  /* Notifications Section */
+  .notifications {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: #2e7d32;
+  }
+  
+  /* Button Styles */
+  .view-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .view-btn:hover {
+    background-color: #1976d2;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+
+    .dashboard-container-x {
+        display: flex;
+        flex-direction: column;
+    }
+    .dashboard-content-x {
+      grid-template-columns: 1fr;
+    }
+  
+    .card {
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dashboard-header h1 {
+      font-size: 1.5rem;
+    }
+  
+    .card {
+      padding: 1rem;
+    }
+  
+    .view-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+  

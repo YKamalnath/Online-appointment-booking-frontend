@@ -1,0 +1,163 @@
+.questions-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+  }
+  .questions-details-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* padding-bottom: 40px; */
+  }
+  .questions-filter-container > div:first-child {
+    font-family: Lexend;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+  }
+  .questions-filter-container > div:nth-child(2) {
+    font-family: Lexend;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #717173;
+  }
+  
+  .filter-radio-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .questions-filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+  }
+  .questions-des-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+    width: 100%;
+    padding-top: 20px;
+  }
+  .questions-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .question-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Lexend;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    /* color: #282834; */
+    padding: 25px 20px 10px 20px;
+  }
+  .colour-change-green {
+    color: #007bff;
+  }
+  .question-answer {
+    font-family: Lexend;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #717173;
+    padding: 0px 20px 0px 20px;
+  }
+  .filter-radio-button-container > label {
+    color: #373741;
+    font-family: Lexend;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    display: flex;
+    align-content: center;
+    gap: 8px;
+  }
+  .questions-container hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+  }
+  
+  /* Hide the original radio button */
+  input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cacacb;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border-radius: 7px;
+    padding: 0px;
+  }
+  
+  /* Style for the radio button when it's checked */
+  input[type="radio"]:checked::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: #007bff;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 4px;
+  }
+  
+  .selected-radio {
+    color: #007bff;
+  }
+  .question-answer-line {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    display: flex;
+  }
+  
+  @media (max-width: 1024px) {
+    .questions-details-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .questions-filter-container {
+      max-width: 100%;
+    }
+    .services-heading {
+      text-align: center;
+    }
+    .services-heading-des {
+      text-align: center;
+    }
+    .questions-filter-container {
+      align-items: center;
+    }
+    .questions-filter-container > div:nth-child(2) {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 1024px) and (min-width: 426px) {
+    .filter-radio-button-container {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  }
+  

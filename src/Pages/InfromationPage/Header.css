@@ -1,0 +1,160 @@
+.main-landing-header-container {
+    display: flex;
+    background-color: #a5a5db;
+    width: 100%;
+    justify-content: center;
+  }
+  .landing-header-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #a5a5db;
+    height: 680px;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+    max-width: 1330px;
+  }
+  .landing-header-detail-container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    max-width: 600px;
+    gap: 20px;
+  }
+  .landing-header-detail-container > div:first-child {
+    font-size: 24px;
+    font-weight: 700;
+    /* line-height: 96px; */
+    font-family: tektur;
+    max-width: 700px;
+  }
+  .landing-header-detail-container > div:first-child h1 {
+    text-align: left;
+  }
+  .heading-different-color {
+    color: #ffd1e8;
+  }
+  .landing-header-des {
+    color: #f8f8f8;
+    font-family: Lexend;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
+  .landing-header-button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .landing-header-image {
+    width: 40%;
+  }
+
+  /* General Button Styling */
+.button {
+    background-color: #ff7f50;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 26px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button:hover {
+    background-color: #ff6347;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Animation for Hover Effect */
+  .button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button Animation on Load */
+  @keyframes button-animation {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .button {
+    animation: button-animation 0.5s ease-in-out;
+  }
+  
+  /* Specific Styles for Get Started and Learn More */
+  .button.get-started {
+    /* background-color: #28a745; */
+    background: linear-gradient(135deg, #42e695, #3bb2b8);
+  }
+  
+  .button.get-started:hover {
+    background-color: #218838;
+  }
+  
+  .button.learn-more {
+    background-color: #007bff;
+  }
+  
+  .button.learn-more:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .landing-header-container {
+      display: flex;
+      flex-direction: column-reverse;
+      height: auto;
+      padding-bottom: 30px;
+      padding-left: 100px;
+      padding-right: 50px;
+    }
+    .landing-header-image {
+      width: 100%;
+    }
+    .landing-header-detail-container > div:first-child h1 {
+      text-align: center;
+    }
+    .landing-header-des {
+      text-align: center;
+    }
+    .landing-header-detail-container {
+      align-items: center;
+      padding: 0px 10px;
+    }
+    .landing-header-container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .landing-header-container {
+      width: 100%;
+      justify-content: space-around;
+      max-width: 1440px;
+    }
+  }
+  @media (max-width: 1440px) and (min-width: 768px) {
+    .landing-header-container {
+      padding-left: 100px;
+    }
+  }
+  @media (max-width: 768px) {
+    .landing-header-container {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
