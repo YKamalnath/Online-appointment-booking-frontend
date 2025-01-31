@@ -18,11 +18,32 @@ const Navbar = () => {
   const [userRole, setUserRole] = useState(""); // For sign-up
   const isAuthenticated = localStorage.getItem("authToken");
   const [showOptions, setShowOptions] = useState(false);
-
-
   
 
 
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+    name: "",
+    userRole: "",
+  });
+
+// Automatically clear errors as the user types
+const handleEmailChange = (e) => {
+  setEmail(e.target.value);
+  setErrors((prevErrors) => ({
+    ...prevErrors,
+    email: "", // Clear email error on input change
+  }));
+};
+
+const handlePasswordChange = (e) => {
+  setPassword(e.target.value);
+  setErrors((prevErrors) => ({
+    ...prevErrors,
+    password: "", // Clear password error on input change
+  }));
+};
 
  
 
@@ -38,7 +59,7 @@ const Navbar = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     console.log("User:", user);
   
-    const userRole = user?.userRole;
+    const userRole = user?.role;
     console.log("User Role:", userRole);
   
     if (userRole === "doctor") {
@@ -70,28 +91,7 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
-  // // Handle Login Submit
-  // const handleLoginSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   if (!email || !password) {
-  //     alert("Please enter both email and password");
-  //     return;
-  //   }
-
-  //   // Simulate login with hardcoded credentials
-  //   if (email === "test@domain.com" && password === "password123") {
-  //     // Store user info in local storage for future reference
-  //     const user = { email, userRole: "doctor" }; // Set a mock user role
-  //     localStorage.setItem("authToken", "valid_token");
-  //     localStorage.setItem("user", JSON.stringify(user)); // Store user data
-
-  //     // Navigate to the appropriate dashboard
-  //     navigate("/doctor/dashboard");
-  //   } else {
-  //     alert("Invalid email or password, please try again.");
-  //   }
-  // };
+  
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -99,10 +99,24 @@ const Navbar = () => {
     console.log("Login state:", { email, password });
     
   
+    // if (!email || !password) {
+    //   alert("Please enter both email and password");
+    //   return;
+    // }
+    setErrors({ email: "", password: "" }); // Reset errors before submitting
+  
+    let isValid = true;
     if (!email || !password) {
-      alert("Please enter both email and password");
-      return;
+      isValid = false;
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: !email ? "Email is required" : "",
+        password: !password ? "Password is required" : "",
+      }));
     }
+
+    if (!isValid) return; // If form is not valid, stop further processing
+
   
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -151,10 +165,27 @@ const Navbar = () => {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
   
+    // if (!email || !password || !name || !userRole) {
+    //   alert("Please fill in all the fields.");
+    //   return;
+    // }
+
+    setErrors({ email: "", password: "", name: "", userRole: "" }); // Reset errors before submitting
+
+    let isValid = true;
+
     if (!email || !password || !name || !userRole) {
-      alert("Please fill in all the fields.");
-      return;
+      isValid = false;
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: !email ? "Email is required" : "",
+        password: !password ? "Password is required" : "",
+        name: !name ? "Name is required" : "",
+        userRole: !userRole ? "Role is required" : "",
+      }));
     }
+
+    if (!isValid) return; 
     
   
     // Call backend API for signup
@@ -176,6 +207,15 @@ const Navbar = () => {
     } else {
       alert(data.message || "Signup failed");
     }
+  };
+
+  // Handle input change and clear error for each field
+  const handleInputChange = (field, setter) => (e) => {
+    setter(e.target.value);
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [field]: "", // Clear error message for the field
+    }));
   };
 
   useEffect(() => {
@@ -293,9 +333,10 @@ const Navbar = () => {
                       id="login-email"
                       className="form-control"
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={handleEmailChange}
                       placeholder="Enter your email"
                     />
+                    {errors.email && <div className="error">{errors.email}</div>}
                   </div>
                   <div className="form-group">
                     <label htmlFor="login-password">Password</label>
@@ -304,9 +345,10 @@ const Navbar = () => {
                       id="login-password"
                       className="form-control"
                       value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      onChange={handlePasswordChange}
                       placeholder="Enter your password"
                     />
+                     {errors.password && <div className="error">{errors.password}</div>}
                   </div>
                   <button type="submit" className="submit-button">
                     Login
@@ -324,9 +366,11 @@ const Navbar = () => {
                       id="signup-name"
                       className="form-control"
                       value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      // onChange={(e) => setName(e.target.value)}
+                      onChange={handleInputChange("name", setName)}
                       placeholder="Enter your name"
                     />
+                    {errors.name && <div className="error">{errors.name}</div>}
                   </div>
                   <div className="form-group">
                     <label htmlFor="signup-email">Email</label>
@@ -335,9 +379,11 @@ const Navbar = () => {
                       id="signup-email"
                       className="form-control"
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      // onChange={(e) => setEmail(e.target.value)}
+                      onChange={handleInputChange("email", setEmail)}
                       placeholder="Enter your email"
                     />
+                    {errors.email && <div className="error">{errors.email}</div>}
                   </div>
                   <div className="form-group">
                     <label htmlFor="signup-password">Password</label>
@@ -346,9 +392,11 @@ const Navbar = () => {
                       id="signup-password"
                       className="form-control"
                       value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      // onChange={(e) => setPassword(e.target.value)}
+                      onChange={handleInputChange("password", setPassword)} 
                       placeholder="Create a password"
                     />
+                    {errors.password && <div className="error">{errors.password}</div>}
                   </div>
                   <div className="form-group">
                     <label htmlFor="user-role">Role</label>
@@ -356,12 +404,14 @@ const Navbar = () => {
                       id="user-role"
                       className="form-control"
                       value={userRole}
-                      onChange={(e) => setUserRole(e.target.value)}
+                      // onChange={(e) => setUserRole(e.target.value)}
+                      onChange={handleInputChange("userRole", setUserRole)}
                     >
                       <option value="">Select a role</option>
                       <option value="doctor">Doctor</option>
                       <option value="patient">Patient</option>
                     </select>
+                    {errors.userRole && <div className="error">{errors.userRole}</div>}
                   </div>
                   <button type="submit" className="submit-button">
                     Sign Up
