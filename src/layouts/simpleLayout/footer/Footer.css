@@ -34,7 +34,7 @@ footer {
     all: unset;
     font-size: var(--medium-font-size);
     font-weight: 600;
-    color: #1ad079;
+    color: #007bff;
     text-align: left;
   }
   .footer-container li,
