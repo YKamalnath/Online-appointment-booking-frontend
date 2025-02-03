@@ -21,11 +21,11 @@ const sidebar = [
     icon: UserIcon,
   },
   
-  {
-    title: "Chat Manager",
-    path: "/doctor/contact_page",
-    icon: MessageIcon,
-  },
+  // {
+  //   title: "Chat Manager",
+  //   path: "/doctor/contact_page",
+  //   icon: MessageIcon,
+  // },
   {
     title: "Settings",
     path: "/doctor/setting_",

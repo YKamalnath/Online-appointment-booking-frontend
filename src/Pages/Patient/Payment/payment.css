@@ -45,6 +45,30 @@
   margin-bottom: 0.5rem;
 }
 
+.payment-methods {
+  margin-bottom: 1.5rem;
+}
+
+.payment-method-button {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  margin: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  font-size: 16px;
+  color: #444;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.payment-method-button:hover {
+  background: #ececec;
+}
+
 .payment-button {
   width: 100%;
   background-color: #10b981;
@@ -68,6 +92,9 @@
   color: #29db74;
   text-align: center;
   margin-bottom: 1.5rem;
+}
+.payment-success-icon {
+  font-size: 40px;
 }
 
 .payment-receipt {

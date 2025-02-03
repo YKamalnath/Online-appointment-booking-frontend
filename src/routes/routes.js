@@ -42,7 +42,7 @@ export default function AppRoutes() {
       children: [
         { path: 'dashboard', element: <DoctorDashboard /> },
         { path: 'appointment_page', element: <AppointmentPage /> },
-        { path: 'contact_page', element: <ContactPage /> },
+        // { path: 'contact_page', element: <ContactPage /> },
         { path: 'setting_', element: <SettingPage /> },
         { path: 'user_management', element: <UserManagement /> },
         
