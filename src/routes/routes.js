@@ -18,6 +18,8 @@ import UserManagement from '../Pages/Doctor/UserManagement/userManagement';
 import BookingPage from '../Pages/Patient/AppointmentBook/appointmentBook';
 import ChatDoctor from '../Pages/Patient/chatDoctor/chatDoctor';
 import Payment from '../Pages/Patient/Payment/payment';
+import UserProfile from '../Pages/Patient/UserProfile/userProfile';
+import UserVerification from '../Pages/Patient/UserVerification/userVerification';
 
 
 
@@ -57,6 +59,8 @@ export default function AppRoutes() {
         { path: 'Booking_Page', element: <BookingPage /> },
         { path: 'payment-and-bill', element: <Payment /> },
         { path: 'chat_Doctor', element: <ChatDoctor /> },
+        { path: 'User_profile', element: <UserProfile /> },
+        { path: 'User_verification', element: <UserVerification /> },
       
         
        

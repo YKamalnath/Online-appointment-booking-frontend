@@ -1,7 +1,9 @@
 import React from "react";
 import "./patientDashboard.css";
+import { useNavigate } from 'react-router-dom';
 
 function PatientDashboard() {
+  const navigate = useNavigate();
   return (
     <div className="dashboard-container-x">
       <header className="dashboard-header">
@@ -11,15 +13,15 @@ function PatientDashboard() {
         <section className="card profile">
           <h2>Welcome, John Doe</h2>
           <p>Age: 29 | Blood Group: O+</p>
-          <button className="view-btn">View Profile</button>
+          <button className="view-btn" onClick={() => navigate('/patient/User_profile')}>View Profile</button>
         </section>
         <section className="card appointments">
-          <h2>Upcoming Appointments</h2>
+          <h2>Verification status</h2>
           <ul>
-            <li>Dr. Smith - Jan 30, 2025 @ 10:00 AM</li>
-            <li>Dr. Emily - Feb 5, 2025 @ 1:00 PM</li>
+            <li>Check your verfication satus here</li>
+            <li>All your information is protected</li>
           </ul>
-          <button className="view-btn">View All</button>
+          <button className="view-btn" onClick={() => navigate('/patient/User_verification')}>View All</button>
         </section>
         <section className="card medical-history">
           <h2>Medical History</h2>
