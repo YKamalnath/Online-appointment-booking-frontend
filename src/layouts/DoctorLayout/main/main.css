@@ -3,7 +3,8 @@
     /* width: 100%; */
     padding: 30px 33px 40px 312px;
     background: #ffffff;
-    height: calc(100vh - 70px);
+    /* height: calc(100vh - 70px); */
+    height: 100vh;
   }
   
   @media only screen and (max-width: 1279px) {
