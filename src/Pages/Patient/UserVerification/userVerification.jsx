@@ -152,8 +152,10 @@
 
 
 import React, { useState } from 'react';
-import axios from 'axios';
 import './userVerification.css';
+import { auth } from "../../../firebase/firebaseConfig"; // Adjust the path based on your project structure
+
+
 
 function UserVerification() {
   const [userInfo, setUserInfo] = useState({
@@ -174,6 +176,7 @@ function UserVerification() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     
+    // Clear error when user starts typing
     if (errors[name]) {
       setErrors({ ...errors, [name]: '' });
     }
@@ -185,16 +188,19 @@ function UserVerification() {
     let formErrors = {};
     let isValid = true;
 
+    // Name Validation
     if (!userInfo.name) {
       formErrors.name = 'Name is required';
       isValid = false;
     }
 
+    // Date of Birth Validation
     if (!userInfo.dob) {
       formErrors.dob = 'Date of birth is required';
       isValid = false;
     }
 
+    // Email Validation
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!userInfo.email) {
       formErrors.email = 'Email is required';
@@ -204,11 +210,13 @@ function UserVerification() {
       isValid = false;
     }
 
+    // Address Validation
     if (!userInfo.address) {
       formErrors.address = 'Address is required';
       isValid = false;
     }
 
+    // Description Validation
     if (!userInfo.description) {
       formErrors.description = 'Description is required';
       isValid = false;
@@ -218,18 +226,41 @@ function UserVerification() {
     return isValid;
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (validate()) {
+  //     alert('Form Submitted Successfully');
+  //     // You can add your form submission logic here
+  //   }
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
     if (validate()) {
       try {
-        const response = await axios.post('http://localhost:5000/api/user-info', userInfo);
-        alert('Form Submitted Successfully');
+        const token = await auth.currentUser.getIdToken(); // Ensure the user is authenticated
+        const response = await fetch("http://localhost:5000/api/user-info", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(userInfo),
+        });
+  
+        const data = await response.json();
+        if (response.ok) {
+          alert("User information saved successfully!");
+        } else {
+          alert(`Error: ${data.message}`);
+        }
       } catch (error) {
-        console.error(error);
-        alert('Error submitting the form');
+        console.error("Error submitting form:", error);
+        alert("Something went wrong, please try again.");
       }
     }
   };
+  
 
   return (
     <div className="container">
@@ -237,7 +268,7 @@ function UserVerification() {
 
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <div className="verification-fields">Name:</div>
+          <div className='verification-fields'>Name:</div>
           <input
             type="text"
             id="name"
@@ -249,7 +280,7 @@ function UserVerification() {
         </div>
 
         <div className="form-group">
-          <div className="verification-fields">Date of Birth:</div>
+          <div className='verification-fields'>Date of Birth:</div>
           <input
             type="date"
             id="dob"
@@ -261,7 +292,7 @@ function UserVerification() {
         </div>
 
         <div className="form-group">
-          <div className="verification-fields">Email:</div>
+          <div className='verification-fields'>Email:</div>
           <input
             type="email"
             id="email"
@@ -273,7 +304,7 @@ function UserVerification() {
         </div>
 
         <div className="form-group">
-          <div className="verification-fields">Address:</div>
+          <div className='verification-fields'>Address:</div>
           <input
             type="text"
             id="address"
@@ -285,7 +316,7 @@ function UserVerification() {
         </div>
 
         <div className="form-group">
-          <div className="verification-fields">Description:</div>
+          <div className='verification-fields'>Description:</div>
           <textarea
             id="description"
             name="description"
