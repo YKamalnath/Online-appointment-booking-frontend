@@ -100,55 +100,29 @@ function Appointment() {
     fetchAppointments();
   }, []);
 
-  // // Handle appointment acceptance
-  // const handleAcceptAppointment = async (id) => {
-  //   try {
-  //     await updateDoc(doc(db, 'appointments', id), { status: 'Accepted' });
-  //     setAppointments(prevAppointments => prevAppointments.map(app =>
-  //       app.id === id ? { ...app, status: 'Accepted' } : app
-  //     ));
-  //   } catch (error) {
-  //     console.error("Error accepting appointment:", error);
-  //   }
-  // };
-
-  const handleUpdateStatus = async (id, status) => {
+  // Handle appointment acceptance
+  const handleAcceptAppointment = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/appointments/${id}/status`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // Send user's token for verification
-        },
-        body: JSON.stringify({ status }),
-      });
-  
-      if (!response.ok) {
-        throw new Error("Failed to update status");
-      }
-  
-      setAppointments((prevAppointments) =>
-        prevAppointments.map((app) =>
-          app.id === id ? { ...app, status } : app
-        )
-      );
+      await updateDoc(doc(db, 'appointments', id), { status: 'Accepted' });
+      setAppointments(prevAppointments => prevAppointments.map(app =>
+        app.id === id ? { ...app, status: 'Accepted' } : app
+      ));
     } catch (error) {
-      console.error("Error updating appointment status:", error);
+      console.error("Error accepting appointment:", error);
     }
   };
-  
 
-  // // Handle rescheduling appointment
-  // const handleAnotherDay = async (id) => {
-  //   try {
-  //     await updateDoc(doc(db, 'appointments', id), { status: 'declined' });
-  //     setAppointments(prevAppointments => prevAppointments.map(app =>
-  //       app.id === id ? { ...app, status: 'declined' } : app
-  //     ));
-  //   } catch (error) {
-  //     console.error("Error requesting another day:", error);
-  //   }
-  // };
+  // Handle rescheduling appointment
+  const handleAnotherDay = async (id) => {
+    try {
+      await updateDoc(doc(db, 'appointments', id), { status: 'declined' });
+      setAppointments(prevAppointments => prevAppointments.map(app =>
+        app.id === id ? { ...app, status: 'declined' } : app
+      ));
+    } catch (error) {
+      console.error("Error requesting another day:", error);
+    }
+  };
 
   // Handle appointment cancellation
   const handleCancelAppointment = async (id) => {
@@ -177,10 +151,10 @@ function Appointment() {
                   <p><strong>Contact:</strong> {appointment.contact}</p>
                   <p><strong>Status:</strong> {appointment.status || 'Pending'}</p>
                 </div>
-                <button className="accept-button" onClick={() => handleUpdateStatus(appointment.id, "Accepted")}>
+                <button className="accept-button" onClick={() => handleAcceptAppointment(appointment.id)}>
                   Accept
                 </button>
-                <button className="reschedule-button" onClick={() => handleUpdateStatus(appointment.id, "Declined")}>
+                <button className="reschedule-button" onClick={() => handleAnotherDay(appointment.id)}>
                 reschedule
                 </button>
                 <button className="cancel-button" onClick={() => handleCancelAppointment(appointment.id)}>
