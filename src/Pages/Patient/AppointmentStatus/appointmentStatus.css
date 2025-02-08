@@ -1,0 +1,40 @@
+.appointment-status-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .appointment-table th, .appointment-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .appointment-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .status {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .status.pending {
+    color: orange;
+  }
+  
+  .status.confirmed {
+    color: green;
+  }
+  
+  .status.cancelled {
+    color: red;
+  }
+  

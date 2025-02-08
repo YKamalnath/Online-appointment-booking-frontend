@@ -21,13 +21,13 @@ function PatientDashboard() {
             <li>Check your verfication satus here</li>
             <li>All your information is protected</li>
           </ul>
-          <button className="view-btn" onClick={() => navigate('/patient/User_verification')}>View All</button>
+          <button className="view-btn" onClick={() => navigate('/patient/User_verification')}>Status</button>
         </section>
         <section className="card medical-history">
-          <h2>Medical History</h2>
-          <p>Last Visit: Dec 20, 2024</p>
-          <p>Prescriptions: Painkillers, Vitamin D</p>
-          <button className="view-btn">View Full History</button>
+          <h2>Appointment History</h2>
+          <p>Check Appointment Status here.</p>
+          <p>Accept - Pending - Cancle</p>
+          <button className="view-btn" onClick={() => navigate('/patient/Appointment_status')}>Check Status</button>
         </section>
         <section className="card notifications">
           <h2>Notifications</h2>

@@ -20,6 +20,7 @@ import ChatDoctor from '../Pages/Patient/chatDoctor/chatDoctor';
 import Payment from '../Pages/Patient/Payment/payment';
 import UserProfile from '../Pages/Patient/UserProfile/userProfile';
 import UserVerification from '../Pages/Patient/UserVerification/userVerification';
+import ApppointmentStatus from '../Pages/Patient/AppointmentStatus/appointmentStatus';
 
 
 
@@ -61,6 +62,7 @@ export default function AppRoutes() {
         { path: 'chat_Doctor', element: <ChatDoctor /> },
         { path: 'User_profile', element: <UserProfile /> },
         { path: 'User_verification', element: <UserVerification /> },
+        { path: 'Appointment_status', element: <ApppointmentStatus /> },
       
         
        

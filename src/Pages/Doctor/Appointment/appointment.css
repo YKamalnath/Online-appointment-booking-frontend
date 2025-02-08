@@ -76,6 +76,46 @@
     color: #666666;
     margin-top: 20px;
   }
+
+  .accept-button {
+    background: linear-gradient(90deg, #28a745, #218838);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .accept-button:hover {
+    background: linear-gradient(90deg, #218838, #1e7e34);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .reschedule-button {
+    background: linear-gradient(90deg, #ff8c00, #e07b00);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-left: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .reschedule-button:hover {
+    background: linear-gradient(90deg, #e07b00, #c86a00);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+  }
+  
   
   /* Responsive Design */
   @media (max-width: 768px) {
@@ -86,6 +126,13 @@
     }
   
     .cancel-button {
+      align-self: flex-end;
+    }
+    .accept-button {
+      align-self: flex-end;
+    }
+    .reschedule-button{
+
       align-self: flex-end;
     }
   }
