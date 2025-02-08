@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./patientDashboard.css";
 import { useNavigate } from 'react-router-dom';
+import { getAuth } from "firebase/auth";
 
 function PatientDashboard() {
+  const [userName, setUserName] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    if (user) {
+      // Assuming the user's name is stored in the Firebase user profile
+      setUserName(user.displayName || "John Doe");  // Default to "John Doe" if no displayName
+    } else {
+      console.log("No user is logged in.");
+    }
+  }, []);
   return (
     <div className="dashboard-container-x">
       <header className="dashboard-header">
@@ -11,7 +25,8 @@ function PatientDashboard() {
       </header>
       <div className="dashboard-content-x">
         <section className="card profile">
-          <h2>Welcome, John Doe</h2>
+          {/* <h2>Welcome, John Doe</h2> */}
+          <h2>Welcome, {userName}</h2>
           <p>Age: 29 | Blood Group: O+</p>
           <button className="view-btn" onClick={() => navigate('/patient/User_profile')}>View Profile</button>
         </section>

@@ -1,40 +1,73 @@
 .appointment-status-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-  }
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.appointment-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.appointment-table th,
+.appointment-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.appointment-table th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+.appointment-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.appointment-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.status.accepted {
   
-  .appointment-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
+  color: rgb(18, 212, 67);
+}
+
+.status.declined {
   
-  .appointment-table th, .appointment-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-  }
-  
-  .appointment-table th {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .status {
-    font-weight: bold;
-    text-transform: capitalize;
-  }
-  
-  .status.pending {
-    color: orange;
-  }
-  
-  .status.confirmed {
-    color: green;
-  }
-  
-  .status.cancelled {
-    color: red;
-  }
-  
+  color: rgb(243, 14, 14);
+}
+
+.status.pending {
+  background-color: #ffc107;
+  color: white;
+}
+
+.loader {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #007bff;
+  font-weight: bold;
+  padding: 20px;
+}
+
+
+
