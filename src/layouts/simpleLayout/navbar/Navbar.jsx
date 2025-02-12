@@ -15,7 +15,7 @@ const Navbar = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [userRole, setUserRole] = useState(""); // For sign-up
+  const [userRole, setUserRole] = useState("patient"); // For sign-up
   const isAuthenticated = localStorage.getItem("authToken");
   const [showOptions, setShowOptions] = useState(false);
   
@@ -239,18 +239,22 @@ const handlePasswordChange = (e) => {
     //   return;
     // }
 
-    setErrors({ email: "", password: "", name: "", userRole: "" }); // Reset errors before submitting
+    setErrors({ email: "", password: "", name: "", 
+      // userRole: "" 
+    }); // Reset errors before submitting
 
     let isValid = true;
 
-    if (!email || !password || !name || !userRole) {
+    if (!email || !password || !name 
+      // || !userRole
+    ) {
       isValid = false;
       setErrors((prevErrors) => ({
         ...prevErrors,
         email: !email ? "Email is required" : "",
         password: !password ? "Password is required" : "",
         name: !name ? "Name is required" : "",
-        userRole: !userRole ? "Role is required" : "",
+        // userRole: !userRole ? "Role is required" : "",
       }));
     }
 
@@ -263,7 +267,7 @@ const handlePasswordChange = (e) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password, name, userRole }),
+      body: JSON.stringify({ email, password, name, userRole: "patient" }),
     });
   
     const data = await response.json();
@@ -467,7 +471,7 @@ const handlePasswordChange = (e) => {
                     />
                     {errors.password && <div className="error">{errors.password}</div>}
                   </div>
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <label htmlFor="user-role">Role</label>
                     <select
                       id="user-role"
@@ -481,7 +485,7 @@ const handlePasswordChange = (e) => {
                       <option value="patient">Patient</option>
                     </select>
                     {errors.userRole && <div className="error">{errors.userRole}</div>}
-                  </div>
+                  </div> */}
                   <button type="submit" className="submit-button">
                     Sign Up
                   </button>
