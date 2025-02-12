@@ -93,41 +93,120 @@ const handlePasswordChange = (e) => {
 
   
 
-  const handleLoginSubmit = async (e) => {
-    e.preventDefault();
+  // const handleLoginSubmit = async (e) => {
+  //   e.preventDefault();
 
-    console.log("Login state:", { email, password });
+  //   console.log("Login state:", { email, password });
     
   
-    // if (!email || !password) {
-    //   alert("Please enter both email and password");
-    //   return;
-    // }
-    setErrors({ email: "", password: "" }); // Reset errors before submitting
+  //   // if (!email || !password) {
+  //   //   alert("Please enter both email and password");
+  //   //   return;
+  //   // }
+  //   setErrors({ email: "", password: "" }); // Reset errors before submitting
+  
+  //   let isValid = true;
+  //   if (!email || !password) {
+  //     isValid = false;
+  //     setErrors((prevErrors) => ({
+  //       ...prevErrors,
+  //       email: !email ? "Email is required" : "",
+  //       password: !password ? "Password is required" : "",
+  //     }));
+  //   }
+
+  //   if (!isValid) return; // If form is not valid, stop further processing
+
+  
+  //   try {
+  //     const userCredential = await signInWithEmailAndPassword(auth, email, password);
+  //     const user = userCredential.user;
+  
+  //     // Get Firebase ID Token
+  //     const idToken = await user.getIdToken();
+
+  //     // console.log("Firebase ID Token:", idToken);
+  
+  //     // Send the ID Token to the backend (if needed)
+  //     const response = await fetch("http://localhost:5000/login", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${idToken}`,
+  //       },
+  //     });
+  
+  //     const data = await response.json();
+  
+  //     if (response.ok) {
+  //       localStorage.setItem("authToken", idToken);
+  //       localStorage.setItem("user", JSON.stringify(data.user));
+
+        
+  
+  //       // Redirect based on user role
+  //       if (data.user.role === "doctor") {
+  //         navigate("/doctor/dashboard");
+  //       } else if (data.user.role === "patient") {
+  //         navigate("/patient/dashboard");
+  //       } else {
+  //         navigate("/");
+  //       }
+  //     } else {
+  //       alert(data.message || "Login failed");
+  //     }
+  //   } catch (error) {
+  //     alert(error.message || "Login failed");
+  //   }
+    
+  // };
+
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    setErrors({ email: "", password: "" });
   
     let isValid = true;
     if (!email || !password) {
       isValid = false;
       setErrors((prevErrors) => ({
         ...prevErrors,
-        email: !email ? "Email is required" : "",
+        email: !email ? "Email or Name is required" : "",
         password: !password ? "Password is required" : "",
       }));
     }
-
-    if (!isValid) return; // If form is not valid, stop further processing
-
+    if (!isValid) return;
+  
+    let loginEmail = email;
+  
+    // Check if input is a name instead of an email
+    if (!email.includes("@")) {
+      try {
+        const response = await fetch("http://localhost:5000/get-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name: email }), // Using email field for name input
+        });
+  
+        const data = await response.json();
+        if (response.ok) {
+          loginEmail = data.email; // Set retrieved email
+        } else {
+          alert(data.message || "User not found");
+          return;
+        }
+      } catch (error) {
+        alert("Error fetching email: " + error.message);
+        return;
+      }
+    }
   
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, loginEmail, password);
       const user = userCredential.user;
-  
-      // Get Firebase ID Token
       const idToken = await user.getIdToken();
-
-      // console.log("Firebase ID Token:", idToken);
   
-      // Send the ID Token to the backend (if needed)
       const response = await fetch("http://localhost:5000/login", {
         method: "POST",
         headers: {
@@ -137,29 +216,19 @@ const handlePasswordChange = (e) => {
       });
   
       const data = await response.json();
-  
       if (response.ok) {
         localStorage.setItem("authToken", idToken);
         localStorage.setItem("user", JSON.stringify(data.user));
-
-        
   
-        // Redirect based on user role
-        if (data.user.role === "doctor") {
-          navigate("/doctor/dashboard");
-        } else if (data.user.role === "patient") {
-          navigate("/patient/dashboard");
-        } else {
-          navigate("/");
-        }
+        navigate(data.user.role === "doctor" ? "/doctor/dashboard" : "/patient/dashboard");
       } else {
         alert(data.message || "Login failed");
       }
     } catch (error) {
       alert(error.message || "Login failed");
     }
-    
   };
+  
 
 
   const handleSignupSubmit = async (e) => {
@@ -327,14 +396,14 @@ const handlePasswordChange = (e) => {
                 <h2>Login</h2>
                 <form onSubmit={handleLoginSubmit}>
                   <div className="form-group">
-                    <label htmlFor="login-email">Email</label>
+                    <label htmlFor="login-email">Email or User Name</label>
                     <input
-                      type="email"
-                      id="login-email"
+                      type="text" // Changed from "email" to "text"
+                      id="login-identifier"
                       className="form-control"
-                      value={email}
+                      value={email} // This variable now holds either email or name
                       onChange={handleEmailChange}
-                      placeholder="Enter your email"
+                      placeholder="Enter your email or name"
                     />
                     {errors.email && <div className="error">{errors.email}</div>}
                   </div>
